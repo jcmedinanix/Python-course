@@ -1,0 +1,24 @@
+{% extends 'template.html' %}
+{% block titulo %}
+Mi pagina de prueba
+{% endblock %}
+{% block content %}
+{%comment%}
+{{ block.super }}
+{% endcomment%}
+{% if var_bucle and var_bucle == 'Años hasta el 2050'%}
+    <h1 class="title">{{var_bucle}}</h1>
+    <ul>  
+        {% for var_htmls in var_html %}
+        <li>  {{var_htmls}} {{forloop.first }}</li>
+        {% empty %}
+        <p> No hay años </p>
+        {% endfor %}
+    </ul>
+{% else %}    
+    <h1 class="title">No existen años </h1>
+{% endif %}
+{% endblock %}
+{% comment "titulo de comentario" %}
+Segmento donde se mostrara el bucle
+{% endcomment %}

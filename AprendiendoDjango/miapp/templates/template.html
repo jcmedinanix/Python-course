@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<HTML lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block titulo %}
+
+        {% endblock %}
+        - JUAN MEDINA
+
+    </title>
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/styles.css' %}" </head>
+    <!-- Cabecera de la Pagina -->
+
+<BODY>
+    <header>
+        <div id="logotipo">
+            <!--logo django-->
+            <img src="{% static 'images/logo.png' %}" />
+            <h1> MI SITIO WEB | JUAN MEDINA </h1>
+        </div>
+
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'pagina-principal' %}">Inicio</a></li>
+            <li><a href="{% url 'hola-mundo' %}">Hola Mundo</a></li>
+            <li><a href="{% url 'bucle-while' %}">Bucle While</a></li>
+        </ul>
+    </nav>
+
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+
+    <div id="content">
+        <div class="box">
+           
+            {% block content %}
+            <h2>contenido original</h2>
+            {% endblock %}
+        </div>
+
+    </div>
+    <footer>
+        Master en Python &copy; Juan Medina Ruiz {% now "Y" %}
+    </footer>
+</BODY>
+
+</HTML>
