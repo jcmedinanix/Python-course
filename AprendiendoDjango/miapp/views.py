@@ -1,5 +1,7 @@
 import http
+from turtle import title
 from django.shortcuts import render, HttpResponse,redirect
+from miapp.models import Article, Category
 #Menu
 template = """
 
@@ -37,3 +39,17 @@ def bucle_while(request):
 
 def contacto(request,nombre="Juan",apellidos="Medina"):
     return HttpResponse(template + f"<h2>Contacto:{nombre} {apellidos}</h2>")
+
+def crear_articulo(request,title,content,public):
+    articulo= Article(
+        title=title,
+        content=content,
+        public=public
+    )
+    articulo.save()
+    return HttpResponse(f"Articulo Creado: {articulo.title} - {articulo.content}")
+
+def articulo(request):
+    #articulo= Article.objects.get(pk=3)
+    articulo= Article.objects.get(title="Segundo Articulo")
+    return HttpResponse(f"Articulo: {articulo.title}")
