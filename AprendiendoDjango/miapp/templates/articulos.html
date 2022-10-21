@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+{% block titulo %}
+Listado de Articulos
+{% endblock %}
+{% block content %}
+
+<h1 class="title">LISTADO DE ARTICULOS</h1>
+
+<UL>
+       {% for articulo in articulos %} 
+            <li>
+                <h4>{{ articulo.id}} {{ articulo.title}}</h4>
+                <spam>{{ articulo.created_at  }}</spam>
+                <p>{{ articulo.content }}
+                    <a href="{% url 'borrar-articulo' articulo.id %}"> Eliminar </a>
+                </p>
+            </li>
+            <br/>
+       {% endfor %}
+</UL>
+{% endblock %}

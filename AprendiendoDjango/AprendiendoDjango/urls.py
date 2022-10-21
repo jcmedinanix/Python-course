@@ -30,5 +30,10 @@ urlpatterns = [
     path('contacto/<str:nombre>/',miapp.views.contacto,name='contacto'),
     path('contacto/<str:nombre>/<str:apellidos>',miapp.views.contacto,name='contacto'),
     path('crear-articulo/<str:title>/<str:content>/<str:public>',miapp.views.crear_articulo,name='crear_articulo'),
-    path('articulo/',miapp.views.articulo,name='articulo')
+    path('articulo/',miapp.views.articulo,name='articulo'),
+    path('editar-articulo/<int:id>',miapp.views.editar_articulo,name='editar-articulo'),
+    path('articulos/',miapp.views.articulos,name='articulos'),
+    path('borrar-articulo/<int:id>',miapp.views.borrararticulo,name='borrar-articulo'),
+    path('save-article/',miapp.views.save_article,name='save-article'),
+    path('create_article/',miapp.views.create_article,name='create-article'),
 ]

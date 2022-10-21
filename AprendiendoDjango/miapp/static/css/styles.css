@@ -131,6 +131,15 @@ nav ul li a:hover{
     border-radius: 6px;
 }
 
+.box form{
+    width: 40%;
+}
+
+.box form textarea{
+    width: 100%;
+}
+
+
 .title{
     color: #444;
     letter-spacing: 1px;
