@@ -79,11 +79,11 @@ def articulos(request):
     articulos  = Article.objects.filter(id__gt=4)
     articulos  = Article.objects.filter(id__lt=4)
     articulos  = Article.objects.filter(id__gte=4)
-    articulos = Article.objects.all()
     articulos = Article.objects.raw("select * from miapp_article where id=2")
     articulos = Article.objects.filter(
         Q(title__contains="2") | Q(title__contains="1")
     )
+    articulos = Article.objects.all()
     return render(request,'articulos.html',{
         'articulos' : articulos
     })
@@ -94,13 +94,29 @@ def borrararticulo(request,id):
     return redirect('articulos')
 
 def save_article(request):
-    articulo= Article(
-        title=title,
-        content=content,
-        public=public
-    )
-    articulo.save()
-    return HttpResponse(f"Articulo Creado: {articulo.title} - {articulo.content}")
+
+    if request.method=='GET' :
+
+        title=request.GET['title']
+        content=request.GET['content']
+        public=request.GET['public']
+
+        articulo= Article(
+            title=title,
+            content=content,
+            public=public
+        )
+
+        articulo.save()
+    
+        return HttpResponse(f"Articulo Creado: {articulo.title} - {articulo.content}")
+
+    else:
+
+        return HttpResponse("<h2>No se ha podido Guardar el Articulo</h2>")
+
+
+
 
 def create_article(request):
 

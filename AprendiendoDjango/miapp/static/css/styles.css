@@ -134,12 +134,41 @@ nav ul li a:hover{
 .box form{
     width: 40%;
 }
-
-.box form textarea{
+.box form input,
+.box form label{
+    display: block;
+    padding: 5px;
+    padding-left: 0px;
+}
+.box form input[type="text"],
+.box form textarea,
+.box form select{
     width: 100%;
+    margin-bottom: 10px;
+}
+.box form select{
+    width: 100px;
+    padding: 5px;
 }
 
+.box form input[type="submit"],
+.box form input[type="button"],
+.box form button{
+    padding: 10px;
+    margin-top: 5px;
+    background: green;
+    border: 1px solid black;
+    transition: 300ms all;
+    color: white;
+}
 
+.box form input[type="submit"]:hover,
+.box form input[type="button"]:hover,
+.box form button:hover{
+    cursor: pointer;
+    background: #2ba977;
+
+}
 .title{
     color: #444;
     letter-spacing: 1px;
