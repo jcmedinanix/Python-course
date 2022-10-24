@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+{% block titulo %}
+Formulario de Articulos
+{% endblock %}
+{% block content %}
+
+<h1 class="title">FORMULARIO DE ARTICULOS</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    <input type="submit" value="Guardar" />
+</form>
+
+{% endblock %}

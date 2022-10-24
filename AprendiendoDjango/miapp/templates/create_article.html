@@ -5,7 +5,8 @@ Formulario de Articulos
 {% block content %}
 
 <h1 class="title">FORMULARIO DE ARTICULOS</h1>
-<form action="{% url 'save-article' %}" method="get">
+<form action="{% url 'save-article' %}" method="post">
+    {% csrf_token %}
     <label for="title">Titulo </label>
     <input type="text" name="title" >
 
