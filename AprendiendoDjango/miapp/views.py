@@ -125,7 +125,7 @@ def create_article(request):
 
 
 def create_full_article(request):
-
+    
     if request.method == 'POST':
 
         formulario= FormArticle(request.POST);  
