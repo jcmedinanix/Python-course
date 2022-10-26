@@ -16,7 +16,7 @@ class FormArticle(forms.Form):
         ),
         validators=[
             validators.MinLengthValidator(4,'El Titulo es demasiado Corto'),
-            validators.RegexValidator('^[A-Za-z0-9]*$','El titulo Contiene caracteres extraños','invalid_title')
+            validators.RegexValidator('^[A-Za-z0-9ñ ]*$','El titulo Contiene caracteres extraños','invalid_title')
         ]
 
     )
@@ -28,7 +28,10 @@ class FormArticle(forms.Form):
                 'placeholder':'Mete el Contenido1',
                 'class':'content_form_article'
             }
-        )
+        ),
+        validators=[
+            validators.MaxLengthValidator(20,'El Texto es demasiado Largo')
+        ]
     )
 
     content.widget.attrs.update({

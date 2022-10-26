@@ -5,7 +5,13 @@ Listado de Articulos
 {% block content %}
 
 <h1 class="title">LISTADO DE ARTICULOS</h1>
-
+{% if  messages %}
+    {% for message in messages %}
+        <div class='message'>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
 <UL>
        {% for articulo in articulos %} 
             <li>

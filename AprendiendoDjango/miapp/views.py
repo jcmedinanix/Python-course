@@ -4,6 +4,8 @@ from django.shortcuts import render, HttpResponse,redirect
 from miapp.models import Article, Category
 from django.db.models import Q
 from miapp.forms import FormArticle
+from django.contrib import messages
+
 #Menu
 template = """
 
@@ -143,10 +145,11 @@ def create_full_article(request):
                 public=public
             )
 
-        articulo.save()
+            articulo.save()
 
-        #return HttpResponse(articulo.title + ' ' + articulo.content + ' ' + str(articulo.public) )
-        return redirect('articulos')
+             #return HttpResponse(articulo.title + ' ' + articulo.content + ' ' + str(articulo.public) )
+            messages.success(request, f'Has creado Correctamente el articulo {articulo.id}')
+            return redirect('articulos')
 
     else : 
         formulario= FormArticle();  
