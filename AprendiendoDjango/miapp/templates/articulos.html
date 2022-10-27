@@ -12,16 +12,26 @@ Listado de Articulos
         </div>
     {% endfor %}
 {% endif %}
-<UL>
+
        {% for articulo in articulos %} 
-            <li>
-                <h4>{{ articulo.id}} {{ articulo.title}}</h4>
-                <spam>{{ articulo.created_at  }}</spam>
-                <p>{{ articulo.content }}
-                    <a href="{% url 'borrar-articulo' articulo.id %}"> Eliminar </a>
-                </p>
-            </li>
-            <br/>
+
+            <article class="article-item">
+                {% if articulo.image != 'null' and articulo.image.url|length >= 1 %}
+                    <div class="image">
+                        <img src="{{articulo.image.url}}" />
+                    </div>
+                {% endif %}
+                    <div class="data">
+                        <h2>{{ articulo.title}}</h2>
+                        <spam class="date">{{ articulo.created_at  }}</spam>
+                        <p>{{ articulo.content }}
+                            <a href="{% url 'borrar-articulo' articulo.id %}"> Eliminar </a>
+                        </p>
+                    </div>
+
+                    <div class="clearfix"></div>
+            </article>
+           
        {% endfor %}
-</UL>
+
 {% endblock %}

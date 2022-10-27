@@ -17,6 +17,10 @@ body{
     background-color: #F2F2F2;        
 }
 
+.clearfix{
+    clear: both;
+    float: none;
+} 
 /*Estilos Cabecera*/
 
 header{
@@ -199,4 +203,42 @@ footer{
     color: white;
     text-align: center;
     margin-bottom: 8px;
+}
+
+.article-item{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    clear: both;
+}
+
+.article-item .image{
+    width: 200px;
+    height: 200px;
+    float: left;
+    overflow: hidden;
+}
+
+.article-item .data{
+    float: left;
+    padding: 15px;
+    padding-top: 0px;
+}
+.article-item .image img{
+    height: 200px;
+}
+
+.article-item h2{
+    display: block;
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.article-item spam.date{
+    
+    font-size: 15px;
+    color: gray;
+    
 }
