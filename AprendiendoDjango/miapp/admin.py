@@ -8,3 +8,9 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(Article,ArticleAdmin)
 admin.site.register(Category)
+
+#Cambiar Nombre del Panel
+title="Master en Python"
+admin.site.site_header=title
+admin.site.site_title=title
+admin.site.index_title="Panel de Gestion"

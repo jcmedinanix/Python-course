@@ -23,9 +23,9 @@ Listado de Articulos
                 {% endif %}
                     <div class="data">
                         <h2>{{ articulo.title}}</h2>
-                        <spam class="date">{{ articulo.created_at  }}</spam>
+                        <span class="date">{{ articulo.created_at  }}</span>
                         <p>{{ articulo.content }}
-                            <a href="{% url 'borrar-articulo' articulo.id %}"> Eliminar </a>
+                            <a href="{% url 'borrar-articulo' articulo.id %}" class="btn btn-delete"> Eliminar </a>
                         </p>
                     </div>
 
